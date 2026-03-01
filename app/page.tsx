@@ -3,14 +3,10 @@
 import { Summary } from "@/app/types";
 import { submitPDF } from "@/app/upload/action";
 import { DocSummary } from "@/components/doc-summary";
-import FileUpload05 from "@/components/file-upload-05";
 import { PDFDropzone } from "@/components/pdfdropzone";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { useRef, useState } from "react";
-
-// import Image from "next/image";
-// import Link from "next/link";
 
 const sample: Summary = {
   "summary": "This document is a plea agreement between the United States and D. James Sogas in a federal criminal case in the Northern District of California. Under this agreement, the defendant agrees to plead guilty to a one-count Information charging him with participating in a conspiracy to fix prices of dynamic random access memory (DRAM) in violation of the Sherman Antitrust Act. The conspiracy involved coordinating and stabilizing DRAM prices sold to certain computer manufacturers and coordinating bids in specific auctions.\n\nThe agreement explains the rights the defendant is giving up by pleading guilty, including the right to a jury trial, the right to confront witnesses, and most rights to appeal the sentence if it is consistent with or below the agreed recommendation. The defendant admits to participating in the conspiracy during a defined period and acknowledges the factual basis that the government would have presented at trial.\n\nThe parties jointly recommend a specific sentence: a $250,000 criminal fine, seven months of imprisonment, no restitution, and no supervised release. The fine must be paid in full within 15 days after the date of judgment. In addition, the court is required to impose a $100 special assessment. Although the court is not required to accept this recommended sentence, if it does not, the defendant may withdraw his guilty plea.\n\nA significant part of the agreement requires the defendant to cooperate fully and truthfully with ongoing federal investigations and proceedings related to DRAM antitrust violations. If the defendant fails to cooperate or otherwise violates the agreement, the government may void its obligations and prosecute him for additional crimes, and statements he previously made could be used against him.",
@@ -129,13 +125,13 @@ export default function Home() {
       <Separator className="my-4 max-w-3xl" />
       <h1 className="h1">Results</h1>
       {
-        !summary && <div className="flex items-center justify-center h-40">
+        !summary && !loading && <div className="flex items-center justify-center h-40">
               <p>Upload document to get a summary</p>
         </div>
       }
       
       {
-        loading ? <h1>Loading ... </h1> :
+        loading ? <h1 className="text-2xl font-bold&& !loading">Loading ... </h1> :
           !error && summary &&
           <section id="results">
             <DocSummary summary={summary} />
