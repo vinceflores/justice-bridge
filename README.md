@@ -58,6 +58,17 @@ This project strengthened both our technical skills and our understanding of res
 
 First, run the development server:
 
+```
+touch .env_local
+```
+and modify `AI_GATEWAY_API_KEY`
+
+then install dependencies
+
+```
+pnpm install
+```
+then run the app
 ```bash
 npm run dev
 # or
