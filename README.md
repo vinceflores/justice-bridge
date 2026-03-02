@@ -1,6 +1,8 @@
 ## JusticeBridge
 
-[![Watch the video](https://img.youtube.com/vi/sXlXrMEstcM/maxresdefault.jpg)](https://youtu.be/sXlXrMEstcM)
+<!-- [![Watch the video](https://img.youtube.com/vi/sXlXrMEstcM/maxresdefault.jpg)](https://youtu.be/sXlXrMEstcM) -->
+[![Watch the video](https://img.youtube.com/vi/sXlXrMEstcM/0.jpg)](https://youtu.be/sXlXrMEstcM)
+
 ## Inspiration
 In the U.S. criminal justice system, life-altering decisions are often made using documents that many defendants and their families struggle to understand. Plea agreements, sentencing orders, and probation conditions are written in dense legal language, full of technical terms and high-stakes consequences.
 
