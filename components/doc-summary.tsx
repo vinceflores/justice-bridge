@@ -45,12 +45,14 @@ export function DocSummary(props: DocSummaryProps) {
                     </tr>
                 </thead>
                 <tbody>
-                    {summary.obligations.map((i, k) => (
-                        <tr key={k} className="hover:bg-gray-50">
-                            <td className="border border-gray-300 p-3">{i.obligation}</td>
-                            <td className="border border-gray-300 p-3">{i.consequence_if_violated}</td>
-                        </tr>
-                    ))}
+
+                    {summary.obligations && summary.obligations.length > 0 &&
+                        summary.obligations.map((i, k) => (
+                            <tr key={k} className="hover:bg-gray-50">
+                                <td className="border border-gray-300 p-3">{i.obligation}</td>
+                                <td className="border border-gray-300 p-3">{i.consequence_if_violated}</td>
+                            </tr>
+                        ))}
                 </tbody>
             </table>
             <h2 className="h2">Violation Risks</h2>
@@ -63,7 +65,7 @@ export function DocSummary(props: DocSummaryProps) {
                     </tr>
                 </thead>
                 <tbody>
-                    {summary.violation_risks.map((v, idx) => (
+                    {summary.violation_risks && summary.violation_risks.map((v, idx) => (
                         <tr key={idx} className="hover:bg-gray-50 align-top">
                             <td className="border border-gray-300 p-3 align-top">{v.clause}</td>
                             <td className="border border-gray-300 p-3">{v.explanation}</td>
@@ -89,7 +91,7 @@ export function DocSummary(props: DocSummaryProps) {
                     </tr>
                 </thead>
                 <tbody>
-                    {summary.deadlines.map((d, idx) => (
+                    {summary.deadlines && summary.deadlines.map((d, idx) => (
                         <tr key={idx} className="hover:bg-gray-50">
                             <td className="border border-gray-300 p-3">{d.description}</td>
                             <td className="border border-gray-300 p-3">{d.date ?? "TBD"}</td>
@@ -106,7 +108,7 @@ export function DocSummary(props: DocSummaryProps) {
                     </tr>
                 </thead>
                 <tbody>
-                    {summary.financial_penalties.map((p, idx) => (
+                    {summary.financial_penalties && summary.financial_penalties.map((p, idx) => (
                         <tr key={idx} className="hover:bg-gray-50">
                             <td className="border border-gray-300 p-3">{p.type}</td>
                             <td className="border border-gray-300 p-3">{p.amount}</td>
@@ -117,7 +119,7 @@ export function DocSummary(props: DocSummaryProps) {
             <h2 className="h2">Lawyer Questions</h2>
             <ul>
                 {
-                    summary.lawyer_questions.map((i, k) => (
+                    summary.lawyer_questions && summary.lawyer_questions.map((i, k) => (
                         <li key={k} className="p-3 border-t-2 border-b-2 ">{i}</li>
                     ))
                 }

@@ -7,23 +7,22 @@ export type Summary = {
   obligations: {
     obligation: string;
     consequence_if_violated: string | null;
-  }[];
+  }[] | null;
   violation_risks: {
     clause: string;
     explanation: string;
     severity: "low" | "moderate" | "high";
-  }[];
+  }[] | null;
   deadlines: {
     description: string;
     date: string | null;
-  }[];
+  }[] | null;
   financial_penalties:
     | {
         type: string;
         amount: string;
-      }[]
-    | null;
-  lawyer_questions: string[];
+      }[]  | null;
+  lawyer_questions: string[] | null;
 };
 
 export const SummarySchema = z.object({
